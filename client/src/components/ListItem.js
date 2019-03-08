@@ -1,14 +1,15 @@
-// import React from 'react';
+import React from 'react';
+import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 const ListItem = (props) =>
   <div className="item">
     <div>
-      <span>DISPLAY INDEX LOCATION AND ITEM NAME</span>
-      <div>DISPLAY NUMBER OF LIKES</div>
+      <span>{props.index}. {props.item.name}</span>
+      <div>Likes: {props.item.likes}</div>
     </div>
     <div>
-      <button type="button">remove</button>
-      <button type="button">like</button>
+      <button type="button" onClick={() => props.deleteItem(props.index)}>remove</button>
+      <button type="button" onClick={() => props.updateItem(props.index)}>like</button>
     </div>
   </div>
 
